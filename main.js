@@ -6,6 +6,7 @@ import Doctor from "./doctor.js"
 import Cita from "./cita.js"
 import Hospital from "./hospital.js"
 import PacienteAsegurado from "./pacienteAsegurado.js"
+
 class Main{
     constructor(){
 
@@ -53,7 +54,7 @@ class Main{
         this.hospitales = new Hospital(datoHospital)
 
         let datoPacienteAsegurado = {
-            nombre: this.nombres,
+            nombres: new Nombre("Laura Elizabeth", "Pacheco", "Larios"),
             fecha: this.fechas, 
             telefono: 3123194899,
             numberPoliz: "S15482687D240356",
@@ -98,13 +99,13 @@ class Main{
 
     getHospital(){
 
-        
+        console.log(`${this.pacienteAsegurado.getPerfil()}`)
 
-        this.hospitales.getRegistrarDoctor(this.doctor1)
-        this.hospitales.getRegistrarCitas(this.citas)
+        // this.hospitales.getRegistrarDoctor(this.doctor1)
+        // this.hospitales.getRegistrarCitas(this.citas)
 
-        this.hospitales.getListarDoctores()
-        this.hospitales.getListarCitas()
+        // this.hospitales.getListarDoctores()
+        // this.hospitales.getListarCitas()
     }
 
 }

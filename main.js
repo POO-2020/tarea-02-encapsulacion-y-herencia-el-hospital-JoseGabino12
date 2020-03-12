@@ -5,6 +5,7 @@ import Paciente from "./paciente.js"
 import Doctor from "./doctor.js"
 import Cita from "./cita.js"
 import Hospital from "./hospital.js"
+import PacienteAsegurado from "./pacienteAsegurado.js"
 class Main{
     constructor(){
 
@@ -12,6 +13,7 @@ class Main{
         this.horas = new Tiempo(11,30,"AM")
         this.fechas = new Fecha(30,4,2001)
         this.nombres = new Nombre("José Gabino", "Morales", "González")
+        this.fechaVigencia = new Fecha(20,6,2050)
 
         let datoDoctor = {
             nombre: this.nombreDoctor,
@@ -49,6 +51,16 @@ class Main{
             direccion: "Av. San Fernando #312"
         }
         this.hospitales = new Hospital(datoHospital)
+
+        let datoPacienteAsegurado = {
+            nombre: this.nombres,
+            fecha: this.fechas, 
+            telefono: 3123194899,
+            numberPoliz: "S15482687D240356",
+            fechVigencia: this.fechaVigencia,
+            compa: "AT&A"
+        }
+        this.pacienteAsegurado = new PacienteAsegurado(datoPacienteAsegurado)
     }
 
     getTempo(){
@@ -85,12 +97,16 @@ class Main{
     }
 
     getHospital(){
+
+        
+
         this.hospitales.getRegistrarDoctor(this.doctor1)
         this.hospitales.getRegistrarCitas(this.citas)
 
         this.hospitales.getListarDoctores()
         this.hospitales.getListarCitas()
     }
+
 }
 
 let app = new Main()

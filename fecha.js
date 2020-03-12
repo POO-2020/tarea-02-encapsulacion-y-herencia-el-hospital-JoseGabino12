@@ -15,7 +15,7 @@ export default class Fecha{
     }
     getAños(){
         let añosTranscurridos 
-        añosTranscurridos = 2020 - this.fechas.getFullYear() 
+        añosTranscurridos = 2020 - this._fechas.getFullYear() 
         global = añosTranscurridos
         return `${añosTranscurridos}`
     }
@@ -39,12 +39,12 @@ export default class Fecha{
     }
     getFecha(){
         let mesDelAño
-        mesDelAño = this.años[this.fechas.getMonth()]
-        return `${this.fechas.getDate()}/${mesDelAño}/${this.fechas.getFullYear()}`
+        mesDelAño = this._años[this._fechas.getMonth()]
+        return `${this._fechas.getDate()}/${mesDelAño}/${this._fechas.getFullYear()}`
     }
     getDiaFecha(){
         let diaDeSemana
-        diaDeSemana = this.diasSemana[this.fechas.getDay()]
+        diaDeSemana = this._diasSemana[this._fechas.getDay()]
         return `${diaDeSemana}`
     }
 }

@@ -2,26 +2,26 @@ import Doctor from "./doctor.js"
 import Cita from "./cita.js"
 
 export default class Hospital{
-    constructor(nombre, direccion){
-        this.nombres = nombre
-        this.direcciones = direccion
-        this.doctores =  Array()
-        this.citas =  Array()
+    constructor({nombre, direccion}){
+        this._nombres = nombre
+        this._direcciones = direccion
+        this._doctores =  Array()
+        this._citas =  Array()
     }
     getRegistrarDoctor(doctor){
-        this.doctores.push(doctor)
+        this._doctores.push(doctor)
     }
     getListarDoctores(){
-        this.doctores.forEach((doctor,i) => {
-            console.log(`${doctor.getPerfil()}, ${i}`)
+        this._doctores.forEach((doctor,i) => {
+            console.log(`No.- ${i + 1}: ${doctor.getPerfil()}`)
         })
     }
     getRegistrarCitas(cita){
-        this.citas.push(cita)
+        this._citas.push(cita)
     }
     getListarCitas(){
-        this.citas.forEach((cita,i) => {
-            console.log(`${cita.getCita()}, ${i}`)
+        this._citas.forEach((cita,i) => {
+            console.log(`No.- ${i + 1}: ${cita.getCita()}`)
         })
     }
 }

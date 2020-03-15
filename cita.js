@@ -6,6 +6,6 @@ export default class Cita{
         this._pacientes = paciente
     }
     getCita(){
-        return `${this._fechas.getFecha()}, ${this._horas.getFormato24()}, Dr. ${this._doctores.getApellidoPaternoDoc()}, ${this._pacientes.getNombreCompleto()}`
+        return `${this._fechas.getFecha()}, ${this._horas.getFormato24()}, Dr. ${this._doctores.getApellidoPaternoDoc()}, ${this._pacientes.getNombreCompletoPac()}`
     }
 }

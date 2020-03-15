@@ -5,16 +5,38 @@ export default class Hospital{
     constructor({nombre, direccion}){
         this._nombres = nombre
         this._direcciones = direccion
-        this._doctores =  Array()
-        this._citas =  Array()
+        this._doctores = new Array()
+        this._citas = new Array()
     }
     getRegistrarDoctor(doctor){
         this._doctores.push(doctor)
     }
+
     getListarDoctores(){
         this._doctores.forEach((doctor,i) => {
             console.log(`No.- ${i + 1}: ${doctor.getPerfil()}`)
         })
+    }
+
+    _encontrarIndiceDoctor(doctor){
+        let indice = this._doctores.findIndex((e => e.esIgualA(doctor)))
+        return indice
+    }
+
+    _encontrarDoctor(doctor){
+        let indice = this._doctores.find((e => e.esIgualA(doctor)))
+        return indice
+    }
+
+    elimanr(doctor){
+        let indice = this._encontrarIndiceEstudiante(estudiante)
+
+        if(indice < 0){
+            return false
+        }
+
+        this._estudiante.splice(indice, 1)
+        return true
     }
     getRegistrarCitas(cita){
         this._citas.push(cita)

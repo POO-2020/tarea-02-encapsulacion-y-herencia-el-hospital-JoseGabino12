@@ -53,15 +53,6 @@ class Main{
         }
         this.hospitales = new Hospital(datoHospital)
 
-        let datoPacienteAsegurado = {
-            nombres: new Nombre("Laura Elizabeth", "Pacheco", "Larios"),
-            fecha: this.fechas, 
-            telefono: 3123194899,
-            numberPoliz: "S15482687D240356",
-            fechVigencia: this.fechaVigencia,
-            compa: "AT&A"
-        }
-        this.pacienteAsegurado = new PacienteAsegurado(datoPacienteAsegurado)
     }
 
     getTempo(){
@@ -99,10 +90,24 @@ class Main{
 
     getHospital(){
 
-        console.log(`${this.pacienteAsegurado.getPerfil()}`)
+        let datoPacienteAsegurado = {
+            nombre: new Nombre("Laura Elizabeth", "Pacheco", "Larios"),
+            fecha: new Fecha(25,6,2001), 
+            telefono: 3123194899,
+            numberPoliz: "S15482687D240356",
+            fechVigencia: this.fechaVigencia,
+            compa: "AT&A"
+        }
+        let pacienteAsegurado = new PacienteAsegurado(datoPacienteAsegurado)
 
         // this.hospitales.getRegistrarDoctor(this.doctor1)
         // this.hospitales.getRegistrarCitas(this.citas)
+
+        // console.log(this.hospitales._encontrarDoctor(this.doctor1))
+        // console.log(this.hospitales._encontrarIndiceDoctor(this.doctor1))
+        console.log(pacienteAsegurado.getNombreCompleto())
+
+       
 
         // this.hospitales.getListarDoctores()
         // this.hospitales.getListarCitas()

@@ -6,7 +6,7 @@ export default class Nombre{
      * @param {string} apellidoMaterno 
      */
     constructor(nombre, apellidoPaterno, apellidoMaterno){
-        this._nombres = nombre
+        this._nombre = nombre
         this._apellidoPaternos = apellidoPaterno
         this._apellidoMaternos = apellidoMaterno
     }
@@ -14,13 +14,13 @@ export default class Nombre{
         return `${this._apellidoPaternos}`
     }
     getNombreCompleto(){
-        return `${this._nombres} ${this._apellidoPaternos} ${this._apellidoMaternos}`
+        return `${this._nombre} ${this._apellidoPaternos} ${this._apellidoMaternos}`
     }
     getApellidoNombre(){
-        return `${this._apellidoPaternos} ${this._apellidoMaternos} ${this._nombres}`
+        return `${this._apellidoPaternos} ${this._apellidoMaternos} ${this._nombre}`
     }
     getIniciales(){
-        let nombreCompleto = `${this._nombres} ${this._apellidoPaternos} ${this._apellidoMaternos}`
+        let nombreCompleto = `${this._nombre} ${this._apellidoPaternos} ${this._apellidoMaternos}`
         let separador = " "
         let iniciales = [] 
         let nombreSeparado = nombreCompleto.split(separador)

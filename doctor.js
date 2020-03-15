@@ -6,10 +6,23 @@ export default class Doctor{
         this._telefonos = telefono
         this._cedulas = cedula
     }
-    getApellidoPaternoDoc(){
-        return `${this._nombres.getApellidoPaterno()}`
+    getCedula(){
+        return this._cedulas
     }
+
+    getApellidoPaternoDoc(){
+        return this._nombres.getApellidoPaterno()
+    }
+
     getPerfil(){
         return `${this._cedulas}, ${this._especialidades}, Dr.${this._nombres.getApellidoPaterno()}, ${this._telefonos}`
+    }
+
+    esIgualA(doctor){
+        if(doctor.getCedula() === this._cedulas){
+            return true
+        }else{
+            return false
+        }
     }
 }

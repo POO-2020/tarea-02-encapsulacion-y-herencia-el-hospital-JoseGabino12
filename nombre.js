@@ -10,24 +10,21 @@ export default class Nombre{
         this._apellidoPaternos = apellidoPaterno
         this._apellidoMaternos = apellidoMaterno
     }
-    getApellidoPaterno(){
-        return `${this._apellidoPaternos}`
-    }
+
     getNombreCompleto(){
         return `${this._nombre} ${this._apellidoPaternos} ${this._apellidoMaternos}`
     }
+
     getApellidoNombre(){
         return `${this._apellidoPaternos} ${this._apellidoMaternos} ${this._nombre}`
     }
+
+    getApellidoPaterno(){
+        return `${this._apellidoPaternos}`
+    }
+
     getIniciales(){
-        let nombreCompleto = `${this._nombre} ${this._apellidoPaternos} ${this._apellidoMaternos}`
-        let separador = " "
-        let iniciales = [] 
-        let nombreSeparado = nombreCompleto.split(separador)
-        for(let i=0; i < nombreSeparado.length; i++){
-            iniciales[i] = nombreSeparado[i].substring(0, 1)
-        }
-        return `${iniciales} `
+        return  (`${this._nombre.charAt(0)}${this._apellidoPaterno.charAt(0)}${this._apellidoMaterno.charAt(0)}`)
 
     }
 }

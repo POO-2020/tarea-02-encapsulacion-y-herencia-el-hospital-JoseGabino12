@@ -11,10 +11,14 @@ class Main{
     constructor(){
 
         this.nombreDoctor = new Nombre("Juan Manuel", "Michel", "Herrera")
+
         this.horas = new Tiempo(11,30,"AM")
-        this.fechas = new Fecha(30,4,2001)
+
+        this.fechas = new Fecha(new Date(2001,4,30))
+
         this.nombres = new Nombre("José Gabino", "Morales", "González")
-        this.fechaVigencia = new Fecha(20,6,2050)
+
+        this.fechaVigencia = new Fecha( new Date (2050,6,20) ) 
 
         let datoDoctor = {
             nombre: this.nombreDoctor,
@@ -53,6 +57,16 @@ class Main{
         }
         this.hospitales = new Hospital(datoHospital)
 
+        let datoPacienteAsegurado = {
+            nombre: new Nombre("Laura Elizabeth", "Pacheco", "Larios"),
+            fecha: new Fecha( new Date(2001,6,25) ), 
+            telefono: 3123194899,
+            numberPoliz: "S15482687D240356",
+            fechVigencia: this.fechaVigencia,
+            compa: "AT&A"
+        }
+        this.pacienteAsegurado = new PacienteAsegurado(datoPacienteAsegurado)
+
     }
 
     getTempo(){
@@ -78,6 +92,8 @@ class Main{
 
     getPaciente(){
         console.log(`Perfil ${this.paciente.getPerfil()}`)
+
+        this.pacienteAsegurado.getPerfil()
     }
 
     getDoctor(){
@@ -88,26 +104,18 @@ class Main{
         console.log(`${this.citas.getCita()}`)
     }
 
+    
     getHospital(){
 
-        let datoPacienteAsegurado = {
-            nombre: new Nombre("Laura Elizabeth", "Pacheco", "Larios"),
-            fecha: new Fecha(25,6,2001), 
-            telefono: 3123194899,
-            numberPoliz: "S15482687D240356",
-            fechVigencia: this.fechaVigencia,
-            compa: "AT&A"
-        }
-        let pacienteAsegurado = new PacienteAsegurado(datoPacienteAsegurado)
 
         // this.hospitales.getRegistrarDoctor(this.doctor1)
         // this.hospitales.getRegistrarCitas(this.citas)
 
         // console.log(this.hospitales._encontrarDoctor(this.doctor1))
         // console.log(this.hospitales._encontrarIndiceDoctor(this.doctor1))
-        console.log(pacienteAsegurado.getNombreCompleto())
+        
 
-       
+
 
         // this.hospitales.getListarDoctores()
         // this.hospitales.getListarCitas()
@@ -116,4 +124,4 @@ class Main{
 }
 
 let app = new Main()
-app.getHospital()
+app.getPaciente()

@@ -29,13 +29,13 @@ export default class Hospital{
     }
 
     elimanr(doctor){
-        let indice = this._encontrarIndiceEstudiante(estudiante)
+        let indice = this._encontrarIndiceEstudiante(doctor)
 
         if(indice < 0){
             return false
         }
 
-        this._estudiante.splice(indice, 1)
+        this._doctores.splice(indice, 1)
         return true
     }
     getRegistrarCitas(cita){

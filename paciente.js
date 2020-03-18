@@ -12,10 +12,12 @@ export default class Paciente{
         this._fechas = fecha
         this._telefonos = telefono
     }
-    getNombreCompletoPac(){
+
+    getNombreCompleto(){
         return this._nombre.getNombreCompleto()
     }
+
     getPerfil(){
-        return `${this.getNombreCompletoPac()}, ${this._fechas.getFecha()}, ${this._telefonos}`
+        return `${this._nombre.getNombreCompleto()}, ${this._fechas.getFecha()}, ${this._telefonos}`
     }
 }

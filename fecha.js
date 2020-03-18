@@ -7,11 +7,13 @@ export default class Fecha{
      * @param {number} año 
      */
     
-    constructor(dia, mes, año){
-        this._fechas = new Date( año, mes - 1, dia)
+    constructor(fecha){
+        this._fechas = fecha
+
         this._diasSemana = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"]
+
         this._años = ["Enero","Febrero","Marzo", "Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
-        console.log("Objeto inicializado")
+       
     }
     getAños(){
         let añosTranscurridos 
